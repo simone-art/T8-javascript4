@@ -1,32 +1,28 @@
 let frutas = ["banana", "morango", "bacurí", "laranja"];
 
 
-const inputType = document.getElementById("nomeFrutas");
+let inputType = document.getElementById("nomeFrutas");
 console.log(inputType)
 
-const buttonType = document.getElementById("buttonFin");
+let buttonType = document.getElementById("buttonFin");
 console.log(buttonType)
 
 
-buttonType.addEventListener("click", function(evento){
-    evento.preventDefault();
-    if (nomeFrutas() === "text"){
-        inputType.getAttribute("placeholder","A sua fruta escolhida é:");
+buttonFin.addEventListener("click", function(){
+    let arrAchou = frutas.filter(fruta => fruta === inputType.value)
+    console.log(arrAchou)
+    if (arrAchou.length > 0) {
+        alert(`ACHOU 0 ${inputType.value}`)
 
-    }   
-    // } else if (etiqueta.value.trim() == ""){};    
-    // else {
-    //     adicioneTexto.setAttribute("placeholder","Escreva aquí uma nova tarefa");
+    }else{
+        alert(`NAO ACHOU 0 ${inputType.value}`)
 
+    }
+});
 
-    // }
-})
+// if(frutas.find (fruta => fruta === inputType.value)){
+//     alert(`ACHOU 0 ${inputType.value}`)
+// }else{
+//     alert(`NAO ACHOU 0 ${inputType.value}`)
 
- 
-    // buttonFin.addEventListener("click", function(evento){
-    // evento.preventDefault();
-    // if (inputType == "text"){
-    //     console.log(text)
-
-    //     }
-    // })
+// }
