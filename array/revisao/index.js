@@ -99,7 +99,8 @@ console.log(arrayProcura)
 
 //REDUCE, PROPIEDAD QUE PERMITE UNIR LOS ELEMENTOS DEL ARRAY DE IZQUIERDA A DERECHA.
 //IZQUIERDA ES EL PRIMER ELEMENTO, EL RESTO DE LOS ELEMENTOS, EL REDUCE 
-//LO RECONOCE COMO UBICADOS A LA DERECHA.  REDUCE ACUMULA VALORES EN VARIABLES MATEMÁTICAS
+//LO RECONOCE COMO UBICADOS A LA DERECHA.  REDUCE ACUMULA VALORES EN VARIABLES MATEMÁTICAS 
+//Y RETORNA UN RESULTADO, NO UN ARRAY (LISTA).
  
 let juntaComida = comidas.reduce((esq, dir) => {
 return `${esq} e ${dir}`
@@ -113,3 +114,18 @@ let somaNumero = numeros.reduce((esq, dir) => {
 console.log(somaNumero)
 
 // somaNumero.reduce()
+
+// FIND ES UNA PROPIEDAD QUE PERMITE ENCONTRA UN ITEM O ELEMENTO DE UN ARRAY(LISTA)
+
+console.log(numeros) //DEVUELVE EL ARRAY CON TODOS LOS NÚMEROS INCLUIDOS EN EL ARRAY (LISTA)
+
+console.log(numeros.find(numero => numero === 1))
+console.log(numeros.findIndex(numero => numero === 1)) //BUSCA Y RETORNA EL NUMERO QUE PIDES
+
+console.log(numeros.find(numero => numero === -1)) //BUSCA Y RETORNA EL NUMERO QUE PIDES//SI NO
+//LO ENCUENTRA TE DA COMO RESULTADO UNDEFINED
+console.log(numeros.findIndex(numero => numero === 9))//BUSCA Y RETORNA EL NUMERO QUE PIDES//SI NO
+//LO ENCUENTRA TE DA COMO RESULTADO -1
+menorQueDez = (algumValor) => algumValor < 1
+console.log(numeros.every(numero => menorQueDez (numero)))
+
