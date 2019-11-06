@@ -25,3 +25,102 @@ let resultados = [
         imagem: "http://img.recipepuppy.com/5.jpg"
     }
 ];
+
+class Navbar {
+    render(){
+        const navbar = `
+        <img class="navbar__logo" src="./imgs/logo.png" alt="Logo" />
+        <div class="group__input">
+            <input class="input__search" type="search" placeholder="Search" aria-label="Search">
+            <button class="button__search" onclick=""> Search </button>
+        </div>
+        `
+        document.querySelector(".navbar").innerHTML = navbar
+
+}
+    
+}
+
+const renderNavbar = new Navbar
+renderNavbar.render()
+
+
+class Card{
+    constructor(resultado){
+        this.resultado = resultado
+    }
+    render() {
+        const Card = `<div class="card">
+          <img class="imagem" src = ${this.resultado.imagem} />
+          <h2>${this.resultado.titulo}</h2>
+          <p class = "ingredientes">${this.resultado.ingredientes}</p>
+          </div>`
+
+          document.querySelector('.cards').insertAdjacentHTML(`beforeend`, Card)
+        //   document.querySelector('.cards').innerHTML = resultados.map(card => {
+        //       return rew Card(card).render
+        //   }).join("")
+      }
+
+}
+
+resultados.map((resultado) => {
+    new Card(resultado).render()
+  })
+
+
+
+//   console.log(input__search)
+//   const button__search = document.getElementsByClassName("group__input")
+//   console.log(button__search)
+  
+  document.querySelector(".button__search").addEventListener('click', function (){
+      let inputValue = document.querySelector(".input__search").value.toUpperCase()
+      let encontrados = resultados.filter(card => {
+          return card.titulo.toUpperCase().includes(inputValue) ||
+          card.ingredientes.toUpperCase().includes(inputValue)
+        })
+        console.log(encontrados)
+        encontrados.map(encontrado => {
+            new Card(encontrado).render()
+        })
+        
+    }
+    
+    )
+    // let tittle = ["Ginger", "Champagne", "potato", "eggnog", "suculent", "irish"]
+    // let word = tittle.includes("Ginger", "Champagne", "potato", "eggnog", "suculent", "irish")
+    // console.log(tittle)
+   
+
+
+//     search.addEventListener("onclick", function (evento) {
+//     if (resultados.filter(text => text === ginger)) {
+//         $(this.resultado[0]);
+
+//     } else if  
+//         (resultados.filter(text => text === potato))
+//         $(this.resultado[1]);
+//         }
+
+// )
+
+
+
+
+
+
+
+    // button__search.addEventListener("click", function() {
+    //     if (group__input() === "Ginger"){
+    //         $(this.resultado[0]).show();
+    //         $(this.resultado[1]).hide();
+    //         $(this.resultado[2]).hide();
+    //         $(this.resultado[3]).hide();
+    //         $(this.resultado[4]).hide();
+            
+            
+    //     }
+    // }) 
+    
+
