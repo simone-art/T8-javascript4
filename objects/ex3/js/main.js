@@ -50,13 +50,13 @@ class Card{
         this.resultado = resultado
     }
     render() {
-        const Card = `<div class="card">
+        return `<div class="card">
           <img class="imagem" src = ${this.resultado.imagem} />
           <h2>${this.resultado.titulo}</h2>
           <p class = "ingredientes">${this.resultado.ingredientes}</p>
           </div>`
 
-          document.querySelector('.cards').insertAdjacentHTML(`beforeend`, Card)
+        //   document.querySelector('.cards').insertAdjacentHTML(`beforeend`, Card)
         //   document.querySelector('.cards').innerHTML = resultados.map(card => {
         //       return rew Card(card).render
         //   }).join("")
@@ -64,11 +64,21 @@ class Card{
 
 }
 
-resultados.map((resultado) => {
-    new Card(resultado).render()
-  })
+document.querySelector(".cards").innerHTML =
+resultados.map((resultado) =>{
+    return new Card(resultado).render()
+}).join("")
 
+// resultados.map((resultado) => {
+//     new Card(resultado).render()
+//   })
 
+//ESTE COMPONENTE SE TUVO QUE RETORNAR GENERAL PORQUE CON LA CLASS ".CARDS" Y CONST CARD
+// EL CÓDIGO QUEDA EN ESPECÍFICO Y TIENES QUE COLOCARLO EN GENERAL PARA QUE LO PUEDAS
+//REUTILIZAR. LA CLASS ".CARDS" LO TORNA ESPECÍFICO Y CUANDO REUTILIZAS EL CÓDIDO DA UN
+//ERROR. AL HACERLO GENERAL, COLOCAS EL RETURN DESPUÉS DE RENDER Y EL MAP FUERA DEL RENDER.
+//AL HACERLO EN ESPECÍFICO COLOCAS LA VARIABLES ANTES DEL RENDER  Y ACTIVAS EL
+//document.querySelector('.cards').insertAdjacentHTML(`beforeend`, Card)
 
 //   console.log(input__search)
 //   const button__search = document.getElementsByClassName("group__input")
@@ -80,10 +90,11 @@ resultados.map((resultado) => {
           return card.titulo.toUpperCase().includes(inputValue) ||
           card.ingredientes.toUpperCase().includes(inputValue)
         })
-        console.log(encontrados)
+        // console.log(encontrados)
+        document.querySelector(".cards").innerHTML =
         encontrados.map(encontrado => {
-            new Card(encontrado).render()
-        })
+            return new Card(encontrado).render()
+        }).join("")
         
     }
     
