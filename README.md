@@ -123,7 +123,7 @@ Nessa aula tivemos:
  - [Orientação a objetos](#orientação-a-objetos)
  - [Função construtora e Classes](#função-contrutora-e-classes)
  - [Exercícios](#exercicios-2)
-
+ 
 ##### Revisão
 Podemos obter objetos das seguintes formas: 
 ```
