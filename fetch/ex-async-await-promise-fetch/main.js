@@ -26,4 +26,4 @@ async function pegarArcoIris(){
     
 }
 
-pegarArcoIris()
+pegarArcoIris().then(()=>console.log("Yay, carregou!")).catch(()=>"Droga! nao carregou :(")
