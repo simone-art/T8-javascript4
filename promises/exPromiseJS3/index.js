@@ -44,3 +44,5 @@ function criaTexto(texto) {
   // Promise.all([ensaboar(), enxaguar()])
   //   .then(resAll => resAll.forEach(res => criaTexto(res)))
   //   .catch(err => console.log(err))
+
+  //CON PROMISE.ALL EJECUTAS EL PROCESO TODO AL MISMO TIEMPO Y NO HAY QUE ESPERAR.
