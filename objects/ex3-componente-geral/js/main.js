@@ -29,7 +29,7 @@ let resultados = [
 
 const renderNavbar = new Navbar
 renderNavbar.render()
-const sectionCards = document.querySelector(".cards")
+const sectionCards = document.querySelector('.cards')
 const carregaCards = (arrayRecebido) => {
     sectionCards.innerHTML = arrayRecebido.map(objeto => {
         return new Card(objeto).render()
@@ -63,10 +63,6 @@ document.querySelector('.button__search').addEventListener('click', function(){
         receita.ingredientes.toUpperCase().includes(inputValue)
     })
 
-    // document.querySelector('.cards').innerHTML = 
-    // achados.map(encontrado => {
-    //     return new Card(encontrado).render()
-    // }).join("")
     carregaCards(achados)
 })
 
